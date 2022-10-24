@@ -1,10 +1,8 @@
 package com.RegistrationVerification.token;
 
         import com.RegistrationVerification.Model.UserModel;
-
         import java.util.Date;
         import java.util.UUID;
-
         import javax.persistence.*;
 
 @Entity

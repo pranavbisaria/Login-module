@@ -6,7 +6,6 @@ package com.RegistrationVerification.Repository;
 
     @Repository("userRepository")
     public interface UserRepository extends CrudRepository<UserModel, String> {
-
         UserModel findByEmailIdIgnoreCase(String emailId);
 
     }

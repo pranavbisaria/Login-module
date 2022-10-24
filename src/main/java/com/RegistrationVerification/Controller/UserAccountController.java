@@ -18,13 +18,10 @@ public class UserAccountController {
 
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private ConformationTokenRepository conformationTokenRepository;
-
     @Autowired
     private EmailService emailService;
-
     @RequestMapping(value="/register", method = RequestMethod.GET)
     public ModelAndView displayRegistration(ModelAndView modelAndView, UserModel userModel)
     {
@@ -33,12 +30,9 @@ public class UserAccountController {
         return modelAndView;
     }
 
-
-
     @RequestMapping(value="/register", method = RequestMethod.POST)
     public ModelAndView registerUser(ModelAndView modelAndView, UserModel userModel)
     {
-
         UserModel existingUser = userRepository.findByEmailIdIgnoreCase(userModel.getEmailId());
         if(existingUser != null)
         {

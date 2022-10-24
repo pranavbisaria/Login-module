@@ -1,7 +1,6 @@
 package com.RegistrationVerification.Model;
 
 import javax.persistence.*;
-
 @Entity
 @Table(name = "users")
 public class UserModel {

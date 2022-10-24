@@ -1,10 +1,10 @@
-package com.otpverification.OTPemailVerifivation.Controller;
+package com.RegistrationVerification.Controller;
 
-import com.otpverification.OTPemailVerifivation.Model.UserModel;
-import com.otpverification.OTPemailVerifivation.Repository.ConformationTokenRepository;
-import com.otpverification.OTPemailVerifivation.Repository.UserRepository;
-import com.otpverification.OTPemailVerifivation.Service.EmailService;
-import com.otpverification.OTPemailVerifivation.token.ConformationToken;
+import com.RegistrationVerification.Model.UserModel;
+import com.RegistrationVerification.Repository.ConformationTokenRepository;
+import com.RegistrationVerification.Repository.UserRepository;
+import com.RegistrationVerification.Service.EmailService;
+import com.RegistrationVerification.token.ConformationToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
@@ -20,7 +20,7 @@ public class UserAccountController {
     private UserRepository userRepository;
 
     @Autowired
-    private ConformationTokenRepository confirmationTokenRepository;
+    private ConformationTokenRepository conformationTokenRepository;
 
     @Autowired
     private EmailService emailService;
@@ -49,16 +49,16 @@ public class UserAccountController {
         {
             userRepository.save(userModel);
 
-            ConformationToken confirmationToken = new ConformationToken(userModel);
+            ConformationToken conformationToken = new ConformationToken(userModel);
 
-            confirmationTokenRepository.save(confirmationToken);
+            conformationTokenRepository.save(conformationToken);
 
             SimpleMailMessage mailMessage = new SimpleMailMessage();
             mailMessage.setTo(userModel.getEmailId());
             mailMessage.setSubject("Complete Registration!");
             mailMessage.setFrom("YOUR EMAIL ADDRESS");
             mailMessage.setText("To confirm your account, please click here : "
-                    +"http://localhost:8080/confirm-account?token="+confirmationToken.getConformationToken());
+                    +"http://localhost:8080/confirm-account?token="+conformationToken.getConformationToken());
 
             emailService.sendEmail(mailMessage);
 
@@ -72,9 +72,9 @@ public class UserAccountController {
 
 
     @RequestMapping(value="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
-    public ModelAndView confirmUserAccount(ModelAndView modelAndView, @RequestParam("token")String confirmationToken)
+    public ModelAndView conformUserAccount(ModelAndView modelAndView, @RequestParam("token")String conformationToken)
     {
-        ConformationToken token = confirmationTokenRepository.findByConformationToken(confirmationToken);
+        ConformationToken token = conformationTokenRepository.findByConformationToken(conformationToken);
 
         if(token != null)
         {

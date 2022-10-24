@@ -1,10 +1,11 @@
-package com.otpverification.OTPemailVerifivation.token;
+package com.RegistrationVerification.token;
+
+        import com.RegistrationVerification.Model.UserModel;
 
         import java.util.Date;
         import java.util.UUID;
 
-        import com.otpverification.OTPemailVerifivation.Model.UserModel;
-        import jakarta.persistence.*;
+        import javax.persistence.*;
 
 @Entity
 @Table(name="conformationToken")

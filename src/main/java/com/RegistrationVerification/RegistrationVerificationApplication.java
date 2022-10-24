@@ -1,11 +1,11 @@
-package com.otpverification.OTPemailVerifivation;
+package com.RegistrationVerification;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
-public class OtPemailVerifivationApplication {
+public class RegistrationVerificationApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(OtPemailVerifivationApplication.class, args);
+		SpringApplication.run(RegistrationVerificationApplication.class, args);
 	}
 }

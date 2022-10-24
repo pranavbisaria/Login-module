@@ -1,6 +1,6 @@
-package com.otpverification.OTPemailVerifivation.Model;
+package com.RegistrationVerification.Model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")

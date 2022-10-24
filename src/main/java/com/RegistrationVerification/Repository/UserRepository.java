@@ -1,6 +1,6 @@
-package com.otpverification.OTPemailVerifivation.Repository;
+package com.RegistrationVerification.Repository;
 
-    import com.otpverification.OTPemailVerifivation.Model.UserModel;
+    import com.RegistrationVerification.Model.UserModel;
     import org.springframework.data.repository.CrudRepository;
     import org.springframework.stereotype.Repository;
 

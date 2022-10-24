@@ -1,6 +1,6 @@
-package com.otpverification.OTPemailVerifivation.Repository;
+package com.RegistrationVerification.Repository;
 
-import com.otpverification.OTPemailVerifivation.token.ConformationToken;
+import com.RegistrationVerification.token.ConformationToken;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
